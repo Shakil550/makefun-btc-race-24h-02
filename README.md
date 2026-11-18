@@ -1,4 +1,4 @@
-# BTC Dip-Buy Bot — Race a BTC trading bot live for 24 hours
+# BTC Dip-Buy Bot v2 — Race a BTC trading bot live for 24 hours
 
 A bot that trades Coinbase Wrapped BTC (cbBTC) against USDC on 1-minute
 on-chain prices with $1,000 of paper money. Simulation only: nothing is
@@ -11,6 +11,15 @@ than 2.25% over the last 60 one-minute bars, buy with the full cash balance.
 Exit the whole position at +2.5%, at −3.0%, or after 1440 bars, whichever
 comes first. Long only, one position, at most one order per batch.
 
+All comparisons are in exact integer arithmetic in basis points
+(`BPS_DENOM = 10000n`): the buy fires when
+`close_now * 10000 < close_60_bars_ago * 9775`, take-profit when
+`close * 10000 >= entry * 10250`, stop-loss when
+`close * 10000 <= entry * 9700`. No network, no wall clock, no files
+outside this repository; two runs on the same data produce the same orders.
+
+## Why this rule
+
 The previous bounty window's rule (−2.5% over 60 bars, +4%/−1.5%/120 bars)
 never fired on this bounty window (0 trades, $0), because the sharpest
 60-bar drop in the 24 hours to 2026-11-18 14:44 UTC was only −2.31%. The
@@ -20,8 +29,8 @@ and trailing stops gave back the bounce.
 
 ## Local grade (dev window, `makefun grade-local --driver process`)
 
-- **Net PnL +$23.13** (1 round trip, win rate 1.0, max drawdown 1.5%,
-  fees $0.81) — passes the dev gate (net PnL > $0).
+- **Net PnL +$23.13** (2 trades = 1 round trip, win rate 1.0, max drawdown
+  1.50%, fees $0.81) — passes the dev gate (net PnL > $0).
 - Same rule on the previous bounty window: +$25.94, so it is not fitted
   to one day alone.
 - House baselines on this dev window, for comparison: buy-and-hold −$31.63,
