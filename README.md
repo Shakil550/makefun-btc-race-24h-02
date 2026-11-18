@@ -1,5 +1,11 @@
 # BTC Dip-Buy Bot v2 — Race a BTC trading bot live for 24 hours
 
+[![make.fun · btc-race-24h-20261118-1444](https://make.fun/badge/btc-race-24h-20261118-1444.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![rank](https://make.fun/badge/btc-race-24h-20261118-1444/Shakil550/makefun-btc-race-24h-02/rank.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![reward](https://make.fun/badge/btc-race-24h-20261118-1444/Shakil550/makefun-btc-race-24h-02/reward.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+
+An entry for the [make.fun "Race a BTC trading bot live for 24 hours" bounty](https://make.fun/bounty/btc-race-24h-20261118-1444) ($250 USDC, 10 places paid).
+
 A bot that trades Coinbase Wrapped BTC (cbBTC) against USDC on 1-minute
 on-chain prices with $1,000 of paper money. Simulation only: nothing is
 traded for real.
